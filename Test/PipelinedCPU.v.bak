@@ -4,7 +4,7 @@ module PipelinedCPU(SysCLK, RST, SysRST);
 	/***********************************************************
 		This Block Handles the CLOCK and Reset
 	***********************************************************/
-	wire [4:0] Phases; // five phase clock that runs each stage of the pipeline
+	wire [4:0] Phases;
 	wire Reset;
 	FivePhaseClock FPC (Phases, SysRST, SysCLK);
 	
@@ -16,11 +16,11 @@ module PipelinedCPU(SysCLK, RST, SysRST);
 	***********************************************************/
 	reg [31:0] Execute, Writeback; 
 	reg [11:0] ExCntrl;
-	reg [7:0] WbCntrl;
+	reg [6:0] WbCntrl;
 
 	wire [31:0] Instruction;
 	wire [6:0] ProgramCounter;
-	reg [6:0] PCin; // buffers the next program location
+	reg [6:0] PCin;
 	wire [2:0] ALUop;
 	wire SWE, OE, RNW, R2LOC, WDmux, PCC, BSC, BGR, ALUShift;
 	wire [10:0] InstxOp;
@@ -32,18 +32,17 @@ module PipelinedCPU(SysCLK, RST, SysRST);
 
 	assign controlBus = {ALUop, R2LOC, WDmux, PCC, BSC, BGR, ALUShift, SWE, OE, RNW};
 
-	// passing along the instructions for the phases
 	always@(posedge Phases[0])
 		if(!Reset) begin
 			Execute <= 32'h00000000;
 			Writeback <= 32'h00000000;
 			ExCntrl <= controlBus;
-			WbCntrl <= controlBus[7:0]; // two source for wbcntrl
+			WbCntrl <= controlBus[6:0];
 		end else begin
 			Execute <= Instruction;
 			Writeback <= Execute;
 			ExCntrl <= controlBus;
-			WbCntrl <= ExCntrl[7:0];
+			WbCntrl <= ExCntrl[6:0];
 		end
 
 
@@ -55,9 +54,9 @@ module PipelinedCPU(SysCLK, RST, SysRST);
 	wire [4:0] R1RS, R2RS, WRS;
 
 	assign R1RS = Execute[9:5];
-	assign R2RS = ExCntrl[8] ? Execute[4:0] : Execute[20:16]; // changed from ExCntrl[7] to ExCntrl[8] which is R2Loc
+	assign R2RS = ExCntrl[7] ? Execute[4:0] : Execute[20:16];
 	assign WRS = Writeback[4:0];
-	assign WD = WbCntrl[7] ? SystemBus : Outhold;// I think we want this on WbCntrl[7] which is WDmux
+	assign WD = WbCntrl[6] ? SystemBus : Outhold;
 	RegisterFile RF(R1ReadData, R2ReadData, R1RS, R2RS, WRS, WD, WbCntrl[2], Reset, Phases[3]);
 
 
@@ -69,8 +68,7 @@ module PipelinedCPU(SysCLK, RST, SysRST);
 	wire [15:0] busA, busB, busOut;
 	wire [2:0] control;
 
-	reg [15:0] Ahold, Bhold;
-	reg [31:0] Outhold;
+	reg [15:0] Ahold, Bhold, Outhold;
 	reg [3:0] flagReg, WflagReg;
 	
 	always@(posedge Phases[0])
@@ -120,7 +118,7 @@ module PipelinedCPU(SysCLK, RST, SysRST);
 
 	wire [6:0] NextPC;
 	wire [15:0] PCsum;
-	fastadder ADD ({9'b0, ProgramCounter}, 16'h0001, 1'b0, PCsum); // changed to fastadder
+	alu ADD ({9'b0, ProgramCounter}, 16'h0001, 3'b001, PCsum, );
 
 	wire [6:0] BGRresult;
 	assign BGRresult = BGRmux ? Writeback[11:5] : PCsum[6:0];
