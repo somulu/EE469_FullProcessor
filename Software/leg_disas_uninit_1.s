@@ -31,7 +31,7 @@ f:      STURW,  [X28, #7], X6   ;Put X6 (H = 0xFF) onto the stack at location 7.
 1e:     STURW,  [X28, #2], X2   ;Put X2 (C = C + 4) in memory location 2.
 1f:     STURW,  [X28, #6], X5   ;Put X5 (G = E | F) in memory location 6.
 20:     STURW,  [X28, #3], X11  ;Put X11 (D = C - 3) in memory location 3.
-21:     ADD,    X0, X0, X1      ;Store A - B in reg 0
+21:     ADD,    X0, X0, X1      ;Store A + B in reg 0
 22:     EOR,    X1, X3, X4      ;Store E ^ F in reg 1
 23:     AND,    X1, X1, X6      ;Store (E^F) & H in reg 1.
 24:     STURW,  [X28], X0       ;Put X0 (A = A + B) in memory location 0.
