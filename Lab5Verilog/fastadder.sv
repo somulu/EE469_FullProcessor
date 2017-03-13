@@ -1,6 +1,3 @@
-
-
-
 /*
 	Designed by Walker Kasinadhuni
 	EE 469 Peckol

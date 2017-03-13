@@ -33,7 +33,7 @@ module InstxMem (Instruction, ProgramCounter, PCin, Clock1, Clock2, Reset);
 
 	//$readmemh(file_name, input_memory, first_index, last_index);
 	initial begin
-		$readmemh("machine.list", IM);
+		$readmemh("machine2.list", IM);
 	end
 
 endmodule

@@ -123,7 +123,7 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 
 	wire [6:0] NextPC;
 	wire [15:0] PCsum;
-	fastadder ADD ({9'b0, ProgramCounter}, 16'h0001, 1'b0, PCsum); // changed to fastadder
+	fastadder ADD ({9'b0, ProgramCounter}, 16'h0001, 1'b0, PCsum, , ); // changed to fastadder
 
 	wire [6:0] BGRresult;
 	assign BGRresult = BGRmux ? Writeback[11:5] : PCsum[6:0];

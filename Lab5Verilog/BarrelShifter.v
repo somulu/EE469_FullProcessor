@@ -1,5 +1,4 @@
 
-
 `timescale 1ns / 1ps
 module BarrelShifter(Result, ShiftSel, Operand);
 	output wire [15:0] Result;
