@@ -7,14 +7,14 @@
 6:      LDURSW, X5, [X28, #5]   ;Load F = 0x6767 from memory location 5 into reg 5.
 7:      LDURSW, X6, [X28, #6]   ;Load G = 0x3C from memory location 6 into reg 6.
 8:      LDURSW, X7, [X28, #7]   ;Load H = 0xFF from memory location 7 into reg 7.
-9:      ADDI,   X8, X28, #2     ;Put the memory address of D in register 9
-10:     ADDI,   X9, XZR, #3     ;Move 3 into register 8
+9:      ADDI,   X8, X28, #3     ;Put the memory address of D in register 8
+10:     ADDI,   X9, XZR, #3     ;Move 3 into register 9
 11:     SUB,    X10, X0, X1     ;Store the result of subtracting A-B in reg 10.
 12:     SUB,    X10, X10, X9    ;Store the result of (A-B) - 3 in reg 10.
 13:     B.GT,   #20             ;Go to the case where (A-B) > 3
 14:     LSL,    X2, X2, #3      ;Store C << 3 in reg 2.
 15:     AND,    X6, X4, X5      ;Store E & F in reg 6.
-16:     STURW,  [X9], X0        ;*dPtr = 7
+16:     STURW,  [X8], X0        ;*dPtr = 7 (memory address of D is in reg8)
 17:     STURW,  [X28, #2], X2   ;C = C << 3 in memory location 2
 18:     STURW,  [X28, #6], X6   ;G = E & F
 19:     B,      #26             ;Go to the end of conditional
