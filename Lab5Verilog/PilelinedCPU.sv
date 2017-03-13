@@ -29,6 +29,7 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 	wire [10:0] InstxOp;
 	assign InstxOp = Instruction[31:21];
 	wire [11:0] controlBus;
+	reg [31:0] R1Forward, R2Forward;
 
 	InstxMem IM (Instruction, ProgramCounter, PCin, Phases[1], Phases[2], Reset);
 	Control CNTRL (ALUop, SWE, OE, RNW, R2LOC, WDmux, PCC, BSC, BGR, ALUShift, Phases[3], InstxOp, Reset);
@@ -42,11 +43,15 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 			Writeback <= 32'h00000000;
 			ExCntrl <= controlBus;
 			WbCntrl <= controlBus[7:0]; // two source for wbcntrl
+			R1Forward <= 32'h00000000;
+			R2Forward <= 32'h00000000;
 		end else begin
 			Execute <= Instruction;
 			Writeback <= Execute;
 			ExCntrl <= controlBus;
 			WbCntrl <= ExCntrl[7:0];
+			R1Forward <= R1ReadData;
+			R2Forward <= R2ReadData;
 		end
 
 
@@ -109,8 +114,8 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 	// THIS PART MAY THROW AN ERROR IN INSTRUCTION CYCLE
 	// Possible solution is to have MAR update earlier
 	// Or forward the relevant RF data to the next stage
-	assign AdxBus = R1ReadData[10:0];
-	assign SRAMDataBus = WbCntrl[1] ? R2ReadData : 32'bz; 
+	assign AdxBus = R1Forward[10:0];
+	assign SRAMDataBus = WbCntrl[1] ? R2Forward : 32'bz; 
 	assign SystemBus = ~WbCntrl[1] ? SRAMDataBus : 32'bz;
 	SRAM Cache (SRAMDataBus, AdxBus, WbCntrl[1], WbCntrl[0], Phases[1], Phases[2], Phases[3]);
 
@@ -132,7 +137,7 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 	// Possible solution is to forward the relevant
 	// RF data to the next stage
 	wire [6:0] BSCresult;
-	assign BSCresult = WbCntrl[5] ? R1ReadData[6:0] : Writeback[6:0];
+	assign BSCresult = WbCntrl[5] ? R1Forward[6:0] : Writeback[6:0];
 	
 	assign NextPC = WbCntrl[6] ? BSCresult : BGRresult;
 	

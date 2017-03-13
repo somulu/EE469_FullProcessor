@@ -1,20 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
-[*] Mon Mar 13 01:32:28 2017
+[*] Mon Mar 13 18:01:58 2017
 [*]
 [dumpfile] "/Users/mitchellorsucci/EE469/lab5-469/Lab5Verilog/Pipeline_Test.vcd"
-[dumpfile_mtime] "Mon Mar 13 01:30:01 2017"
-[dumpfile_size] 739875
+[dumpfile_mtime] "Mon Mar 13 03:25:01 2017"
+[dumpfile_size] 928369
 [savefile] "/Users/mitchellorsucci/EE469/lab5-469/Lab5Verilog/Pipeline_Test.gtkw"
-[timestart] 0
+[timestart] 1340000
 [size] 1440 900
-[pos] -1 -23
-*-18.257523 810000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-18.257523 2630000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] Pipeline_Test.
 [treeopen] Pipeline_Test.dut.
-[treeopen] Pipeline_Test.dut.RF.
-[treeopen] Pipeline_Test.dut.RF.Register[28].
-[sst_width] 274
+[treeopen] Pipeline_Test.dut.ALU.
+[treeopen] Pipeline_Test.dut.RF.Register[3].
+[treeopen] Pipeline_Test.dut.RF.Register[4].
+[treeopen] Pipeline_Test.dut.RF.Register[9].
+[sst_width] 193
 [signals_width] 193
 [sst_expanded] 1
 [sst_vpaned_height] 277
@@ -49,6 +51,7 @@ Pipeline_Test.dut.Execute[31:0]
 Pipeline_Test.dut.ExCntrl[11:0]
 [color] 5
 Pipeline_Test.dut.Writeback[31:0]
+Pipeline_Test.dut.WbCntrl[7:0]
 @24
 [color] 4
 Pipeline_Test.dut.IM.ProgramCounter[6:0]
@@ -77,13 +80,15 @@ Pipeline_Test.dut.RF.WD[31:0]
 @28
 [color] 5
 Pipeline_Test.dut.RF.SWE
-@22
+@23
 Pipeline_Test.dut.RF.Register[0].RR.rowQ[31:0]
+@22
 Pipeline_Test.dut.RF.Register[1].RR.rowQ[31:0]
 Pipeline_Test.dut.RF.Register[2].RR.rowQ[31:0]
-@23
+Pipeline_Test.dut.RF.Register[3].RR.rowQ[31:0]
+Pipeline_Test.dut.RF.Register[4].RR.rowQ[31:0]
+Pipeline_Test.dut.RF.Register[9].RR.rowQ[31:0]
 Pipeline_Test.dut.RF.Register[28].RR.rowQ[31:0]
-@22
 [color] 2
 Pipeline_Test.dut.Ahold[15:0]
 [color] 2
@@ -117,11 +122,11 @@ Pipeline_Test.dut.BGR
 @24
 [color] 1
 Pipeline_Test.dut.PCin[6:0]
-@22
 Pipeline_Test.dut.BGRresult[6:0]
 @28
+Pipeline_Test.dut.BGRmux
 Pipeline_Test.dut.BSC
-@22
+@24
 Pipeline_Test.dut.BSCresult[6:0]
 @28
 Pipeline_Test.dut.PCC

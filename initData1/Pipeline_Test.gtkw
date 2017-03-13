@@ -1,0 +1,199 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Mon Mar 13 23:31:12 2017
+[*]
+[dumpfile] "/Users/mitchellorsucci/EE469/Lab5Verilog/Pipeline_Test.vcd"
+[dumpfile_mtime] "Mon Mar 13 23:17:08 2017"
+[dumpfile_size] 929632
+[savefile] "/Users/mitchellorsucci/EE469/Lab5Verilog/Pipeline_Test.gtkw"
+[timestart] 1400000
+[size] 1440 900
+[pos] -1 -1
+*-18.257523 2230000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Pipeline_Test.
+[treeopen] Pipeline_Test.dut.
+[treeopen] Pipeline_Test.dut.RF.
+[treeopen] Pipeline_Test.dut.RF.Register[10].
+[treeopen] Pipeline_Test.dut.RF.Register[3].
+[treeopen] Pipeline_Test.dut.RF.Register[4].
+[treeopen] Pipeline_Test.dut.RF.Register[5].
+[treeopen] Pipeline_Test.dut.RF.Register[6].
+[treeopen] Pipeline_Test.dut.RF.Register[7].
+[treeopen] Pipeline_Test.dut.RF.Register[8].
+[treeopen] Pipeline_Test.dut.RF.Register[9].
+[sst_width] 193
+[signals_width] 219
+[sst_expanded] 1
+[sst_vpaned_height] 451
+@28
+Pipeline_Test.dut.SysCLK
+Pipeline_Test.dut.RST
+Pipeline_Test.SysRST
+Pipeline_Test.dut.Reset
+@800022
+Pipeline_Test.dut.FPC.Phases[4:0]
+@28
+[color] 1
+(0)Pipeline_Test.dut.FPC.Phases[4:0]
+[color] 2
+(1)Pipeline_Test.dut.FPC.Phases[4:0]
+[color] 3
+(2)Pipeline_Test.dut.FPC.Phases[4:0]
+[color] 4
+(3)Pipeline_Test.dut.FPC.Phases[4:0]
+[color] 5
+(4)Pipeline_Test.dut.FPC.Phases[4:0]
+@22
+[color] 3
+Pipeline_Test.dut.IM.Instruction[31:0]
+[color] 3
+Pipeline_Test.dut.InstxOp[10:0]
+[color] 5
+Pipeline_Test.dut.controlBus[11:0]
+[color] 5
+Pipeline_Test.dut.Execute[31:0]
+@c00028
+[color] 5
+Pipeline_Test.dut.ExCntrl[11:0]
+@28
+[color] 5
+(0)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(1)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(2)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(3)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(4)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(5)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(6)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(7)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(8)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(9)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(10)Pipeline_Test.dut.ExCntrl[11:0]
+[color] 5
+(11)Pipeline_Test.dut.ExCntrl[11:0]
+@1401200
+-group_end
+@22
+[color] 5
+Pipeline_Test.dut.Writeback[31:0]
+@24
+[color] 1
+Pipeline_Test.dut.IM.ProgramCounter[6:0]
+[color] 1
+Pipeline_Test.dut.IM.PCin[6:0]
+[color] 4
+Pipeline_Test.dut.RF.R1RS[4:0]
+[color] 4
+Pipeline_Test.dut.RF.R1ReadData[31:0]
+[color] 4
+Pipeline_Test.dut.RF.R2RS[4:0]
+[color] 4
+Pipeline_Test.dut.RF.R2ReadData[31:0]
+@28
+[color] 4
+Pipeline_Test.dut.R2LOC
+@24
+[color] 4
+Pipeline_Test.dut.RF.WRS[4:0]
+@420
+[color] 4
+Pipeline_Test.dut.RF.WD[31:0]
+@28
+[color] 4
+Pipeline_Test.dut.RF.SWE
+@24
+[color] 4
+Pipeline_Test.dut.R1Forward[31:0]
+[color] 4
+Pipeline_Test.dut.R2Forward[31:0]
+[color] 4
+Pipeline_Test.dut.RF.Register[0].RR.rowQ[31:0]
+[color] 4
+Pipeline_Test.dut.RF.Register[1].RR.rowQ[31:0]
+[color] 4
+Pipeline_Test.dut.RF.Register[2].RR.rowQ[31:0]
+[color] 4
+Pipeline_Test.dut.RF.Register[3].RR.rowQ[31:0]
+[color] 4
+Pipeline_Test.dut.RF.Register[4].RR.rowQ[31:0]
+@420
+[color] 4
+Pipeline_Test.dut.RF.Register[5].RR.rowQ[31:0]
+@23
+[color] 4
+Pipeline_Test.dut.RF.Register[6].RR.rowQ[31:0]
+@420
+[color] 4
+Pipeline_Test.dut.RF.Register[7].RR.rowQ[31:0]
+@24
+[color] 4
+Pipeline_Test.dut.RF.Register[8].RR.rowQ[31:0]
+[color] 4
+Pipeline_Test.dut.RF.Register[9].RR.rowQ[31:0]
+@420
+[color] 4
+Pipeline_Test.dut.RF.Register[10].RR.rowQ[31:0]
+@24
+[color] 4
+Pipeline_Test.dut.RF.Register[28].RR.rowQ[31:0]
+@28
+[color] 2
+Pipeline_Test.dut.ALU.control[2:0]
+@420
+[color] 2
+Pipeline_Test.dut.Ahold[15:0]
+[color] 2
+Pipeline_Test.dut.Bhold[15:0]
+[color] 2
+Pipeline_Test.dut.Outhold[31:0]
+@28
+[color] 2
+Pipeline_Test.dut.flagReg[3:0]
+@c00028
+[color] 2
+Pipeline_Test.dut.WflagReg[3:0]
+@28
+(0)Pipeline_Test.dut.WflagReg[3:0]
+(1)Pipeline_Test.dut.WflagReg[3:0]
+(2)Pipeline_Test.dut.WflagReg[3:0]
+(3)Pipeline_Test.dut.WflagReg[3:0]
+@1401200
+-group_end
+@24
+[color] 7
+Pipeline_Test.dut.Cache.MAR[9:0]
+[color] 7
+Pipeline_Test.dut.Cache.MDR[31:0]
+[color] 7
+Pipeline_Test.dut.SRAMDataBus[31:0]
+@28
+[color] 7
+Pipeline_Test.dut.Cache.OE
+[color] 7
+Pipeline_Test.dut.Cache.RNW
+Pipeline_Test.dut.BGR
+@24
+[color] 1
+Pipeline_Test.dut.PCin[6:0]
+Pipeline_Test.dut.BGRresult[6:0]
+@28
+Pipeline_Test.dut.BSC
+@24
+Pipeline_Test.dut.BSCresult[6:0]
+@28
+Pipeline_Test.dut.PCC
+@24
+Pipeline_Test.dut.NextPC[6:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
