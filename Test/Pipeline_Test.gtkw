@@ -1,11 +1,11 @@
 [*]
 [*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
-[*] Fri Mar 10 23:50:40 2017
+[*] Mon Mar 13 01:22:59 2017
 [*]
-[dumpfile] "/Users/mitchellorsucci/EE469/Test/Pipeline_Test.vcd"
-[dumpfile_mtime] "Fri Mar 10 23:30:01 2017"
-[dumpfile_size] 752689
-[savefile] "/Users/mitchellorsucci/EE469/Test/Pipeline_Test.gtkw"
+[dumpfile] "/Users/mitchellorsucci/EE469/lab5-469/Lab5Verilog/Pipeline_Test.vcd"
+[dumpfile_mtime] "Mon Mar 13 01:21:58 2017"
+[dumpfile_size] 685250
+[savefile] "/Users/mitchellorsucci/EE469/lab5-469/Test/Pipeline_Test.gtkw"
 [timestart] 0
 [size] 1440 813
 [pos] -1 -1
@@ -15,7 +15,7 @@
 [sst_width] 193
 [signals_width] 193
 [sst_expanded] 1
-[sst_vpaned_height] 170
+[sst_vpaned_height] 246
 @28
 Pipeline_Test.dut.SysCLK
 Pipeline_Test.dut.RST
@@ -47,8 +47,6 @@ Pipeline_Test.dut.Execute[31:0]
 Pipeline_Test.dut.ExCntrl[11:0]
 [color] 5
 Pipeline_Test.dut.Writeback[31:0]
-[color] 5
-Pipeline_Test.dut.WbCntrl[6:0]
 @24
 [color] 4
 Pipeline_Test.dut.IM.ProgramCounter[6:0]
@@ -82,8 +80,6 @@ Pipeline_Test.dut.RF.SWE
 Pipeline_Test.dut.Ahold[15:0]
 [color] 2
 Pipeline_Test.dut.Bhold[15:0]
-[color] 1
-Pipeline_Test.dut.Outhold[15:0]
 @28
 [color] 1
 Pipeline_Test.dut.flagReg[3:0]
@@ -95,7 +91,7 @@ Pipeline_Test.dut.WflagReg[3:0]
 (1)Pipeline_Test.dut.WflagReg[3:0]
 (2)Pipeline_Test.dut.WflagReg[3:0]
 (3)Pipeline_Test.dut.WflagReg[3:0]
-@1401208
+@1401200
 -group_end
 @22
 [color] 4

@@ -1,5 +1,5 @@
 `timescale 1ns / 1ns
-module FivePhaseClk(Phases, RST, CLK);
+module FivePhaseClock(Phases, RST, CLK);
 	input RST, CLK;
 	output wire [4:0] Phases;
 
