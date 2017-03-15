@@ -1,17 +1,13 @@
 
 
 
-module PilelinedCPU(SysCLK, RST, SysRST);
-	input RST, SysCLK, SysRST;
+module PilelinedCPU(Reset, InstxOp, ProgramCounter, Phases);
+	input Reset;
 
 	/***********************************************************
 		This Block Handles the CLOCK and Reset
 	***********************************************************/
-	wire [4:0] Phases; // five phase clock that runs each stage of the pipeline
-	wire Reset;
-	FivePhaseClock FPC (Phases, SysRST, SysCLK);
-	
-	StateCounter SC (Reset, RST, Phases[0], SysRST);
+	input wire [4:0] Phases; // five phase clock that runs each stage of the pipeline
 
 
 	/***********************************************************
@@ -22,11 +18,11 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 	reg [7:0] WbCntrl;
 
 	wire [31:0] Instruction;
-	wire [6:0] ProgramCounter;
+	output wire [6:0] ProgramCounter;
 	reg [6:0] PCin; // buffers the next program location
 	wire [2:0] ALUop;
 	wire SWE, OE, RNW, R2LOC, WDmux, PCC, BSC, BGR, ALUShift;
-	wire [10:0] InstxOp;
+	output wire [10:0] InstxOp;
 	assign InstxOp = Instruction[31:21];
 	wire [11:0] controlBus;
 	reg [31:0] R1Forward, R2Forward;
@@ -133,7 +129,7 @@ module PilelinedCPU(SysCLK, RST, SysRST);
 	assign AdxBus = {1'b0, Writeback[20:12]};
 	assign SRAMDataBus = WbCntrl[1] ? R2Forward : 32'bz; 
 	assign SystemBus = ~WbCntrl[1] ? SRAMDataBus : 32'bz;
-	SRAM Cache (SRAMDataBus, AdxBus, WbCntrl[1], WbCntrl[0], Phases[1], Phases[2], Phases[3]);
+	SRAM Cache (SRAMDataBus, AdxBus, WbCntrl[1], WbCntrl[0], Phases[1], Phases[2], Phases[3], Reset);
 
 
 

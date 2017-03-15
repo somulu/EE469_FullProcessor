@@ -18,16 +18,16 @@
 17:     STURW,  [X28, #3], X2   ;C = C << 3 in memory location 3 **
 18:     STURW,  [X28, #7], X6   ;G = E & F **
 19:     B,      #26             ;Go to the end of conditional
-20:     ADDI,   X2, X2, #4      ;C + 4 in reg 2
-21:     ORR,    X6, X4, X5      ;Store E | F in reg 6
-22:     SUB,    X3, X2, X9      ;Store C - 3 in reg 3
-23:     STURW,  [X28, #2], X2   ;Put X2 (C = C + 4) in memory location 2.
-24:     STURW,  [X28, #6], X6   ;Put X6 (G = E | F) in memory location 6.
-25:     STURW,  [X28, #3], X3   ;Put X3 (D = C - 3) in memory location 3.
-26:     ADD,    X0, X0, X1      ;Store A + B in reg 0
-27:     EOR,    X6, X4, X5      ;Store E ^ F in reg 6
-28:     AND,    X6, X6, X7      ;Store (E^F) & H in reg 6.
-29:     STURW,  [X28], X0       ;Put X0 (A = A + B) in memory location 0.
-30:     STURW,  [X28, #6], X6   ;Put X6 (G = (E ^ F) & H) in memory location 6.
+20:     ADDI,   X2, X2, #4      ;C + 4 in reg 2 **
+21:     ORR,    X6, X4, X5      ;Store E | F in reg 6 **
+22:     SUB,    X3, X2, X8      ;Store C - 3 in reg 3 **
+23:     STURW,  [X28, #2], X2   ;Put X2 (C = C + 4) in memory location 3. **
+24:     STURW,  [X28, #6], X6   ;Put X6 (G = E | F) in memory location 7. **
+25:     STURW,  [X28, #3], X3   ;Put X3 (D = C - 3) in memory location 4. **
+26:     ADD,    X0, X0, X1      ;Store A + B in reg 0 **
+27:     EOR,    X6, X4, X5      ;Store E ^ F in reg 6 **
+28:     AND,    X6, X6, X7      ;Store (E^F) & H in reg 6. **
+29:     STURW,  [X28], X0       ;Put X0 (A = A + B) in memory location 0. **
+30:     STURW,  [X28, #6], X6   ;Put X6 (G = (E ^ F) & H) in memory location 6. **
 31:     NOP,
 32:     B,      #31

@@ -16,9 +16,9 @@
 	the next clock.
 */
 
-module SRAM(DataBus, AdxBus, OE, RNW, Clock1, Clock2, Clock3);
+module SRAM(DataBus, AdxBus, OE, RNW, Clock1, Clock2, Clock3, RST);
 	inout wire [31:0] DataBus; 
-	input wire [10:0] AdxBus;
+	input wire [10:0] AdxBus, RST;
 	input wire OE, RNW, Clock1, Clock2, Clock3;
 
 	// the structures that we need for the module
@@ -45,15 +45,27 @@ module SRAM(DataBus, AdxBus, OE, RNW, Clock1, Clock2, Clock3);
 	// On posedge RNW, write the contents of the MDR
 	// To the relevant locations in memory
 	always @(posedge Clock3) begin
-		if (!RNW) begin
+		if(!RST) begin
+			Memory[1] <= 16'h0008;
+			Memory[2] <= 16'h0003;
+			Memory[3] <= 16'h0003;
+			Memory[4] <= 16'h0005;
+			Memory[5] <= 16'h5a5a;
+			Memory[6] <= 16'h6767;
+			Memory[7] <= 16'h003c;
+			Memory[8] <= 16'h00ff;
+			Memory[1025] <= 16'h0000;
+			Memory[1026] <= 16'h0000;
+			Memory[1027] <= 16'h0000;
+			Memory[1028] <= 16'h0000;
+			Memory[1029] <= 16'h0000;
+			Memory[1030] <= 16'h0000;
+			Memory[1031] <= 16'h0000;
+			Memory[1032] <= 16'h0000;
+		end else if (!RNW) begin
 			Memory[{1'b1, MAR}] <= MDR[31:16];
 			Memory[{1'b0, MAR}] <= MDR[15:0];
 		end
-	end
-
-	//$readmemh(file_name, input_memory, first_index, last_index);
-	initial begin
-		$readmemh("data2.list", Memory, 0);
 	end
 	
 endmodule

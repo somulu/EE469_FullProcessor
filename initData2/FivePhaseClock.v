@@ -1,4 +1,3 @@
-
 module FivePhaseClock(Phases, RST, CLK);
 	input RST, CLK;
 	output wire [4:0] Phases;

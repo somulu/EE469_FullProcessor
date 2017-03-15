@@ -1,17 +1,18 @@
 [*]
 [*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
-[*] Tue Mar 14 00:46:27 2017
+[*] Mon Mar 13 23:31:12 2017
 [*]
-[dumpfile] "/Users/mitchellorsucci/EE469/lab5-469/initData2/Pipeline_Test.vcd"
-[dumpfile_mtime] "Tue Mar 14 00:42:41 2017"
-[dumpfile_size] 1010778
-[savefile] "/Users/mitchellorsucci/EE469/lab5-469/initData2/Pipeline_Test.gtkw"
-[timestart] 1779000
+[dumpfile] "/Users/mitchellorsucci/EE469/Lab5Verilog/Pipeline_Test.vcd"
+[dumpfile_mtime] "Mon Mar 13 23:17:08 2017"
+[dumpfile_size] 929632
+[savefile] "/Users/mitchellorsucci/EE469/Lab5Verilog/Pipeline_Test.gtkw"
+[timestart] 1400000
 [size] 1440 900
 [pos] -1 -1
-*-18.257523 2701000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-18.257523 2230000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] Pipeline_Test.
 [treeopen] Pipeline_Test.dut.
+[treeopen] Pipeline_Test.dut.RF.
 [treeopen] Pipeline_Test.dut.RF.Register[10].
 [treeopen] Pipeline_Test.dut.RF.Register[3].
 [treeopen] Pipeline_Test.dut.RF.Register[4].
@@ -23,7 +24,7 @@
 [sst_width] 193
 [signals_width] 219
 [sst_expanded] 1
-[sst_vpaned_height] 651
+[sst_vpaned_height] 451
 @28
 Pipeline_Test.dut.SysCLK
 Pipeline_Test.dut.RST

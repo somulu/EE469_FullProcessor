@@ -40,7 +40,7 @@ module Pipeline_Test();
 		RST <= 1; @(posedge SysCLK)
 		RST <= 0; @(posedge SysCLK) repeat(8) @(posedge SysCLK);
 		RST <= 1; @(posedge SysCLK)
-		repeat(700) @(posedge SysCLK);
+		repeat(300) @(posedge SysCLK);
 		$stop;
 	end
 endmodule

@@ -1,0 +1,12 @@
+
+State Machine - |DE1TopLevel|StateCounter:SC|ps
+Name ps~3 ps~2 
+ps.NOTHING 0 0 
+ps.ONECLICK 0 1 
+ps.HOLD 1 0 
+
+State Machine - |DE1TopLevel|PilelinedCPU:CPU|branchCnt
+Name branchCnt~3 branchCnt~2 
+branchCnt.10 0 0 
+branchCnt.01 1 1 
+branchCnt.00 1 0 
